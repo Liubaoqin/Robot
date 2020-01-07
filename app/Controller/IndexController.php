@@ -12,16 +12,23 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+
+
+use App\Common\Common;
+use App\Common\Redis;
+use App\Model\RoomModel;
+use App\Model\UsersModel;
+use App\Model\CommentModel;
+use App\Model\HeadimgModel;
+use Hyperf\HttpServer\Annotation\AutoController;
+
+/**
+ * @AutoController()
+ */
 class IndexController extends AbstractController
 {
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
-
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}.",
-        ];
+        return 'this is my Cutie';
     }
 }

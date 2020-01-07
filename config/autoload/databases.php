@@ -11,7 +11,7 @@ declare(strict_types=1);
  */
 
 return [
-    'default' => [
+    'user' => [
         'driver' => env('DB_DRIVER', 'mysql'),
         'host' => env('DB_HOST', 'localhost'),
         'database' => env('DB_DATABASE', 'hyperf'),
@@ -37,4 +37,56 @@ return [
             ],
         ],
     ],
+    'robot' => [
+        'driver' => env('DB_DRIVER', 'mysql'),
+        'host' => env('DB_HOST', 'localhost'),
+        'database' => env('DB2_DATABASE', 'hyperf'),
+        'port' => env('DB_PORT', 3306),
+        'username' => env('DB_USERNAME', 'root'),
+        'password' => env('DB_PASSWORD', ''),
+        'charset' => env('DB_CHARSET', 'utf8'),
+        'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
+        'prefix' => env('DB_PREFIX', ''),
+        'pool' => [
+            'min_connections' => 1,
+            'max_connections' => 10,
+            'connect_timeout' => 10.0,
+            'wait_timeout' => 3.0,
+            'heartbeat' => -1,
+            'max_idle_time' => (float) env('DB_MAX_IDLE_TIME', 60),
+        ],
+        'commands' => [
+            'gen:model' => [
+                'path' => 'app/Model',
+                'force_casts' => true,
+                'inheritance' => 'Model',
+            ],
+        ],
+    ],
+//    'all' => [
+//        'driver' => env('DB_DRIVER', 'mysql'),
+//        'host' => 'gz-cdb-aapxz1mj.sql.tencentcdb.com',
+//        'database' => 'db_impress',
+//        'port' => 62553,
+//        'username' => env('DB_USERNAME', 'root'),
+//        'password' => 'Marwog6T3&XN_*5S9JikxF#eU-C+su7zZkQChTn#R!adn0DFb-zZ_JtCwO5$oDl&',
+//        'charset' => env('DB_CHARSET', 'utf8'),
+//        'collation' => env('DB_COLLATION', 'utf8_unicode_ci'),
+//        'prefix' => env('DB_PREFIX', ''),
+//        'pool' => [
+//            'min_connections' => 1,
+//            'max_connections' => 10,
+//            'connect_timeout' => 10.0,
+//            'wait_timeout' => 3.0,
+//            'heartbeat' => -1,
+//            'max_idle_time' => (float) env('DB_MAX_IDLE_TIME', 60),
+//        ],
+//        'commands' => [
+//            'gen:model' => [
+//                'path' => 'app/Model',
+//                'force_casts' => true,
+//                'inheritance' => 'Model',
+//            ],
+//        ],
+//    ],
 ];
